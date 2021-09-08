@@ -2,7 +2,7 @@
     <div class="comic_card">
         <div class="square" :style="{ 'background-image': 'url(' + comic.thumb + ')' }">
         </div>
-        <h5>{{comic.series}}</h5>
+        <h5 class="txt_uppercase">{{comic.series}}</h5>
     </div>
 </template>
 

@@ -37,6 +37,9 @@ body {
 .neutral_color_text {
     color: $neutral_color;
 }
+.brand_color {
+    background-color: $brand_color;
+}
 .brand_color_text {
     color: $brand_color;
 }
@@ -53,4 +56,7 @@ body {
 }
 .row_centred {
     @include row($items: center);
+}
+.row_justified {
+    @include row($content: space-between);
 }

@@ -1,10 +1,10 @@
 <template>
   <header class="container primary_color_text fw_600">
-    <div class="row_aligned fs_small txt_uppercase">
+    <div class="row_justified fs_small txt_uppercase">
         <img src="../assets/img/dc-logo.png" alt="">
         <ul>
-          <li v-for="(link, index) in linksArray" :key="index">
-            <a :href="link.url" :class="{brand_color_text: link.current}">{{ link.text }}</a>
+          <li v-for="(link, index) in linksArray" :key="index" :class="{active: link.current}">
+            <a :href="link.url" >{{ link.text }}</a>
           </li>
         </ul>
     </div>
@@ -74,6 +74,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/style/index.scss";
 header {
   height: 100px;
 
@@ -81,11 +82,31 @@ header {
     height: 75px;
     margin: 15px;
   }
+
   li {
+    height: 100%;
+    line-height: 100px;
+
     display: inline-block;
+    position: relative;
+
     margin: 0 10px;
-    :hover {
-      color: rgb(24, 131, 240);
+  }
+  
+  .active {
+    color: $brand_color;
+
+    :after {
+      content: "";
+      width: 100%;
+      height: 5px;
+      display: inline-block;
+      background-color: $brand_color;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(-100%);
     }
   }
 }
