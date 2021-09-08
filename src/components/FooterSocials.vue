@@ -3,7 +3,7 @@
       <div class="container h-100">
           <div class="row_aligned h-100">
               <div class="button neutral_color_text txt_uppercase fw_600 fs_small">Sign-up now!</div>
-              <div class="row align_center">
+              <div class="row_centred">
                   <div class="d_inline_block brand_color_text fw_600 txt_uppercase">Follow us</div>
                   <img v-for="(img, index) in imgArray" :key="index" :src="getUrl(img.link)" :alt="img.name">
               </div>
